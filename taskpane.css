@@ -1,0 +1,100 @@
+:root {
+  --brand: #0f4c81;
+  --accent: #d83b01;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+  background: #f9fafb;
+  color: #222;
+}
+
+.container {
+  max-width: 720px;
+}
+
+h1 {
+  color: var(--brand);
+}
+
+button {
+  margin: 6px 8px 10px 0;
+  padding: 10px 14px;
+  background-color: var(--brand);
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#status {
+  margin-top: 14px;
+  padding: 12px;
+  min-height: 22px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.template-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.template-section select, .template-section button {
+  margin: 5px;
+}
+
+#template-editor {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.actions-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+#rules-display {
+  padding: 15px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+#rules-display ul {
+  margin: 0;
+  padding-left: 20px;
+}

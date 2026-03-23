@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Formatter Add-in</title>
+  <link rel="stylesheet" href="taskpane.css" />
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Resume Formatter</h1>
+    <p>Create and apply custom resume formatting templates.</p>
+
+    <!-- Template Management -->
+    <div class="template-section">
+      <h2>Templates</h2>
+      <select id="template-select">
+        <option value="">Select a template...</option>
+      </select>
+      <button id="load-template-button">Load Template</button>
+      <button id="new-template-button">New Template</button>
+      <button id="save-template-button" style="display: none;">Save Template</button>
+      <button id="delete-template-button" style="display: none;">Delete Template</button>
+    </div>
+
+    <!-- Template Editor -->
+    <div id="template-editor" style="display: none;">
+      <h2>Template Settings</h2>
+      <div class="form-group">
+        <label for="template-name">Template Name:</label>
+        <input type="text" id="template-name" placeholder="Enter template name">
+      </div>
+
+      <h3>General Formatting</h3>
+      <div class="form-group">
+        <label for="font-name">Font Name:</label>
+        <input type="text" id="font-name" value="Calibri">
+      </div>
+      <div class="form-group">
+        <label for="font-size">Font Size:</label>
+        <input type="number" id="font-size" value="11" min="8" max="72">
+      </div>
+      <div class="form-group">
+        <label for="line-spacing">Line Spacing (points):</label>
+        <input type="number" id="line-spacing" value="14" min="10" max="50">
+      </div>
+
+      <h3>Heading Keywords</h3>
+      <div class="form-group">
+        <label for="heading-keywords">Keywords (comma-separated):</label>
+        <input type="text" id="heading-keywords" value="summary,professional summary,experience,education,skills,certifications,projects">
+      </div>
+
+      <h3>Bullet Detection</h3>
+      <div class="form-group">
+        <label for="bullet-patterns">Bullet Patterns (regex, comma-separated):</label>
+        <input type="text" id="bullet-patterns" value="^(\\*|\\-|•|\\d+\\.)\\s+">
+      </div>
+
+      <h3>Date Alignment</h3>
+      <div class="form-group">
+        <label for="date-pattern">Date Pattern (regex):</label>
+        <input type="text" id="date-pattern" value="\\b(\\d{4}|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\\b">
+      </div>
+      <div class="form-group">
+        <label for="date-alignment">Alignment:</label>
+        <select id="date-alignment">
+          <option value="Right">Right</option>
+          <option value="Left">Left</option>
+          <option value="Center">Center</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Formatting Actions -->
+    <div class="actions-section">
+      <h2>Apply Formatting</h2>
+      <button id="format-button">Format Document</button>
+      <button id="format-section-button">Format Selected Text</button>
+    </div>
+
+    <div id="status" role="status"></div>
+
+    <h2>Current Template Rules</h2>
+    <div id="rules-display"></div>
+  </div>
+
+  <script src="taskpane.js"></script>
+</body>
+</html>
